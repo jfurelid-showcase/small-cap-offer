@@ -223,6 +223,32 @@
   .embed-divider { height: 1px; background: rgba(212,168,83,.08); margin: 16px 0; }
   .embed-insight { font-size: 13px; color: rgba(234,230,220,.6); font-family: 'DM Sans', sans-serif; line-height: 1.7; display: flex; gap: 12px; align-items: flex-start; margin-top: 6px; }
 
+  /* ── QUARTR SPOTLIGHT ── */
+  #quartr { background: var(--navy-mid); padding: 100px 6vw; }
+  .quartr-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .quartr-title { font-size: clamp(28px,3.5vw,48px); font-weight: 400; line-height: 1.12; color: var(--cream); margin-bottom: 22px; }
+  .quartr-title em { font-style: italic; color: var(--accent); }
+  .quartr-body { font-size: 14px; line-height: 1.85; color: rgba(234,230,220,.62); font-family: 'DM Sans', sans-serif; font-weight: 300; margin-bottom: 16px; }
+  .quartr-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 12px; letter-spacing: .16em; color: var(--accent); font-family: 'DM Sans', sans-serif; font-weight: 700; text-decoration: none; border: 1px solid rgba(212,168,83,.25); padding: 11px 20px; transition: background .2s, border-color .2s; }
+  .quartr-link:hover { background: rgba(212,168,83,.08); border-color: var(--accent); }
+
+  .quartr-visual { display: flex; flex-direction: column; gap: 16px; }
+  .quartr-platform-row { display: flex; gap: 12px; }
+  .quartr-platform-row.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .quartr-platform {
+    flex: 1; background: var(--navy-card); border: 1px solid rgba(212,168,83,.12);
+    border-radius: 8px; padding: 22px 20px; text-align: center;
+    transition: border-color .3s;
+  }
+  .quartr-platform:hover { border-color: rgba(212,168,83,.3); }
+  .main-platform { border-color: rgba(212,168,83,.25); }
+  .qp-icon { font-size: 24px; width: 100%; height: 48px; background: rgba(212,168,83,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; padding: 0 12px; }
+  .qp-name { font-size: 16px; font-weight: 600; color: var(--cream); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+  .qp-sub { font-size: 11px; color: rgba(234,230,220,.4); font-family: 'DM Sans', sans-serif; margin-bottom: 12px; }
+  .qp-tag { font-size: 9px; letter-spacing: .14em; color: var(--accent); font-family: 'DM Sans', sans-serif; font-weight: 700; border: 1px solid rgba(212,168,83,.2); padding: 3px 8px; display: inline-block; }
+  .quartr-arrow { text-align: center; font-size: 12px; color: rgba(212,168,83,.4); font-family: 'DM Sans', sans-serif; letter-spacing: .1em; }
+  .quartr-reach { font-size: 12px; color: rgba(234,230,220,.55); font-family: 'DM Sans', sans-serif; line-height: 1.65; display: flex; gap: 10px; align-items: flex-start; padding: 16px 20px; background: rgba(212,168,83,.04); border: 1px solid rgba(212,168,83,.1); border-radius: 6px; }
+
   /* ── PAIN POINTS ── */
   #pain { background: var(--navy-mid); padding: 100px 6vw; }
   .pain-inner { max-width: 1200px; margin: 0 auto; }
@@ -240,6 +266,7 @@
   .pain-bridge strong { color: var(--cream); font-weight: 600; }
 
   @media (max-width: 900px) {
+    .quartr-inner { grid-template-columns: 1fr; gap: 48px; }
     .why-grid { grid-template-columns: 1fr; }
     .llm-inner { grid-template-columns: 1fr; gap: 48px; }
     .nomono-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -289,27 +316,27 @@
     <div class="section-label">THE PROBLEM</div>
     <h2 class="section-title">Small-cap companies<br><em>get lost in the noise.</em></h2>
     <div class="pain-intro">
-      <p>Listed small-cap companies produce quarterly reports just like the large caps. But without the communications budget, the IR team, or the media reach — <em>those reports land in silence.</em></p>
+      <p>Listed small-cap companies produce quarterly reports just like the large caps. But without the communications budget or IR team — <em>those reports land in silence.</em></p>
     </div>
     <div class="pain-grid">
       <div class="pain-card fade-up">
         <div class="pain-num">01</div>
-        <h3>No audio or video commentary in connection with reports</h3>
-        <p>Large-cap companies run webcasts, earnings calls, and CEO videos alongside every report release. Small caps publish a PDF and hope someone reads it. Without audio content, there is nothing for investors to engage with — and nothing for platforms to distribute.</p>
+        <h3>No audio commentary with reports</h3>
+        <p>Large caps run webcasts and CEO videos alongside every release. Small caps publish a PDF. Without audio, there is nothing for investors to engage with — and nothing for platforms to distribute.</p>
       </div>
       <div class="pain-card fade-up d1">
         <div class="pain-num">02</div>
         <h3>IR messaging doesn't travel</h3>
-        <p>Without multimedia content tied to reports, the company narrative stays trapped on the IR page. No podcast feed. No LinkedIn audio. No Quartr episode. Retail investors on Avanza and Nordnet never hear the story behind the numbers — and institutional interest follows attention.</p>
+        <p>Without multimedia content, the company narrative stays trapped on the IR page. Retail investors never hear the story behind the numbers — and attention drives institutional interest.</p>
       </div>
       <div class="pain-card fade-up d2">
         <div class="pain-num">03</div>
-        <h3>Invisible to AI — no Q&amp;A material to crawl</h3>
-        <p>When analysts or investors ask ChatGPT or Perplexity about a small-cap company, there is nothing to cite. No transcripts. No structured Q&amp;A. Press releases and annual reports are poorly indexed. The company simply does not appear in AI-assisted research — an increasingly costly form of invisibility.</p>
+        <h3>Invisible to AI</h3>
+        <p>No transcripts. No structured Q&amp;A. When investors ask ChatGPT about a small-cap, there is nothing to cite. The company simply does not appear in AI-assisted research.</p>
       </div>
     </div>
     <div class="pain-bridge fade-up">
-      <p>A quarterly podcast solves all three. <strong>One 15-minute session per report</strong> creates the audio content, the distribution channel, and the AI-readable transcript — at a cost that fits a small-cap communications budget.</p>
+      <p>A quarterly podcast solves all three. <strong>One 15-minute session per report</strong> creates the audio content, the distribution, and the AI-readable transcript — at a cost that fits a small-cap budget.</p>
     </div>
   </div>
 </section>
@@ -326,8 +353,8 @@
     </div>
     <div class="why-card fade-up d1">
       <div class="why-icon">◎</div>
-      <h3>Reach Retail Investors Directly</h3>
-      <p>Avanza and Nordnet account for the majority of Swedish retail equity ownership. Via the Quartr app, your quarterly podcast reaches these investors directly in the platforms where they already manage their portfolios.</p>
+      <h3>Reach Retail Investors via Quartr</h3>
+      <p>Avanza and Nordnet account for the majority of Swedish retail equity ownership. Via <a href="https://quartr.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(212,168,83,.3);">Quartr</a>, your quarterly podcast reaches these investors directly in the platforms where they already manage their portfolios.</p>
     </div>
     <div class="why-card fade-up d2">
       <div class="why-icon">◈</div>
@@ -342,6 +369,56 @@
   </div>
 </div>
 
+
+<!-- ══ QUARTR SPOTLIGHT ══ -->
+<section id="quartr">
+  <div class="quartr-inner">
+    <div class="fade-left">
+      <div class="section-label">DISTRIBUTION PARTNER</div>
+      <h2 class="quartr-title">Where your investors<br><em>already are.</em></h2>
+      <p class="quartr-body">Quartr is the leading IR audio platform in the Nordics — used by retail and institutional investors to follow earnings, listen to management commentary, and research listed companies. It integrates directly with <strong style="color:var(--cream);">Avanza</strong> and <strong style="color:var(--cream);">Nordnet</strong>, meaning your quarterly podcast surfaces natively in the investment apps your shareholders open every day.</p>
+      <p class="quartr-body">For small-cap companies without a webcast setup or IR team, Quartr is the most direct path to putting your voice in front of the investors who matter most — at the exact moment they are reviewing your report.</p>
+      <a href="https://quartr.com" target="_blank" rel="noopener" class="quartr-link">◎ <span>Explore Quartr ↗</span></a>
+    </div>
+    <div class="fade-right">
+      <div class="quartr-visual">
+        <div class="quartr-platform-row">
+          <div class="quartr-platform main-platform">
+            <div class="qp-icon" style="background:#fff;">
+              <img src="https://logo.clearbit.com/quartr.com" alt="Quartr" style="width:80%;height:80%;object-fit:contain;"/>
+            </div>
+            <div class="qp-name">Quartr</div>
+            <div class="qp-sub">IR audio platform</div>
+            <div class="qp-tag">PRIMARY CHANNEL</div>
+          </div>
+        </div>
+        <div class="quartr-arrow">↓ integrated with</div>
+        <div class="quartr-platform-row two-col">
+          <div class="quartr-platform">
+            <div class="qp-icon" style="background:#fff;">
+              <img src="https://logo.clearbit.com/avanza.se" alt="Avanza" style="width:80%;height:80%;object-fit:contain;"/>
+            </div>
+            <div class="qp-name">Avanza</div>
+            <div class="qp-sub">2.2M+ customers in Sweden</div>
+            <div class="qp-tag">INTEGRATED</div>
+          </div>
+          <div class="quartr-platform">
+            <div class="qp-icon" style="background:#fff;">
+              <img src="https://logo.clearbit.com/nordnet.se" alt="Nordnet" style="width:80%;height:80%;object-fit:contain;"/>
+            </div>
+            <div class="qp-name">Nordnet</div>
+            <div class="qp-sub">2.2M+ customers across the Nordics</div>
+            <div class="qp-tag">INTEGRATED</div>
+          </div>
+        </div>
+        <div class="quartr-reach">
+          <span style="color:var(--accent);">✦</span>
+          Your episode appears in the app the moment an investor looks up your ticker — no extra steps, no extra cost.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ QUARTERLY CYCLE ══ -->
 <section id="rhythm">
